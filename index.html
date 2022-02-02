@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/staly.css">
+    <title>Weather</title>
+</head>
+<body>
+    <div class="wrap">
+        <section class="search">
+            <h1 class="weather__modal-text">Узнать прогноз в твоем городе</h1>
+            <form action="" class="weather__search">
+                <input id="search-sity" type="text" placeholder="City">
+                <button type="button" class="weather__search-btn">Поиск</button>
+            </form>
+        </section>
+    <section class="weather">
+        <div class="weather__modal">
+            <p id="weather-city"></p>
+            <p id="time"></p>
+            <div class="weather__data">
+                <p id="weather__data-gr"></p>
+                <p id="weather__data-icon"></p> 
+            </div>
+            <div class="weather__data-info">
+                <p class="weather__data-pressure"></p>
+                <p class="weather__data-humidity"></p>
+                <p class="weather__data-speed"></p>
+                <p class="weather__data-gust"></p>
+                <p class="weather__data-clouds"></p>
+            </div>
+        </div>
+    </section>
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+</html>

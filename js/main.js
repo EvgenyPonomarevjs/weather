@@ -8,7 +8,7 @@ let icon = document.querySelector('#weather__data-icon');
 searchBtn.addEventListener('click', () => {
     let searchCity = city.value
     //console.log(searchCity);
-    let url = `http://api.openweathermap.org/data/2.5/weather?q=${searchCity}&units=metric&appid=${keyApi}`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&units=metric&appid=${keyApi}`;
 
     fetch(url).then(res => {
         return res.json()
@@ -79,51 +79,3 @@ time ();
         hour = (hour < 10) ? '0' + hour : hour;
         time.innerHTML = message += `  ` + hour + ':' + minute;
     }
-
-
-// {
-//     "coord": {
-//         "lon": 37.6156,
-//         "lat": 55.7522
-//     },
-//     "weather": [
-//         {
-//             "id": 804,
-//             "main": "Clouds",
-//             "description": "overcast clouds",
-//             "icon": "04n"
-//         }
-//     ],
-//     "base": "stations",
-//     "main": {
-//         "temp": -2.79,
-//         "feels_like": -6.88,
-//         "temp_min": -3.25,
-//         "temp_max": -2.71,
-//         "pressure": 1001,
-//         "humidity": 96,
-//         "sea_level": 1001,
-//         "grnd_level": 982
-//     },
-//     "visibility": 9552,
-//     "wind": {
-//         "speed": 3.03,
-//         "deg": 209,
-//         "gust": 8.54
-//     },
-//     "clouds": {
-//         "all": 98
-//     },
-//     "dt": 1643749352,
-//     "sys": {
-//         "type": 1,
-//         "id": 9027,
-//         "country": "RU",
-//         "sunrise": 1643779322,
-//         "sunset": 1643810659
-//     },
-//     "timezone": 10800,
-//     "id": 524901,
-//     "name": "Moscow",
-//     "cod": 200
-// }

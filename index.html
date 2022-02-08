@@ -5,13 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/staly.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
     <title>Weather</title>
 </head>
 <body>
     <div class="wrap">
         <section class="search">
             <h1 class="weather__modal-text">Узнать прогноз в твоем городе</h1>
-            <form action="" class="weather__search">
+            <form action="" class="weather__search" onsubmit="return false">
                 <input id="search-sity" type="text" placeholder="City">
                 <button type="button" class="weather__search-btn">Поиск</button>
             </form>

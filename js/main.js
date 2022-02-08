@@ -21,7 +21,7 @@ searchBtn.addEventListener('click', () => {
     })
 
     function pushData (dataWeather) {
-       //console.log(dataWeather);
+        // console.log(dataWeather);
         introducedCity.innerHTML = dataWeather.name;
         let temp1 = dataWeather.main.temp;
         temp.innerHTML =  Math.ceil(temp1) + `<span class='weather__data-c'>C</span>`;
@@ -29,30 +29,26 @@ searchBtn.addEventListener('click', () => {
         document.querySelector('.weather__data-pressure').innerHTML = `Давление: ` + dataWeather.main.pressure + ` mph`; 
         document.querySelector('.weather__data-humidity').innerHTML = `Влажность: ` + dataWeather.main.humidity + ` %`;
         document.querySelector('.weather__data-speed').innerHTML = `Скорость ветра: ` + dataWeather.wind.speed + ` м/с`;
-        document.querySelector('.weather__data-gust').innerHTML = `Порывы ветра: ` + dataWeather.wind.gust + ` м/с`;
+        document.querySelector('.weather__data-gust').innerHTML 
+        if(dataWeather.wind.gust >= 1) {
+            document.querySelector('.weather__data-gust').innerHTML = `Порывы ветра: ` + dataWeather.wind.gust + ` м/с`;
+        } else {
+            document.querySelector('.weather__data-gust').innerHTML = `Порывы ветра: Умеренные`
+        };
         document.querySelector('.weather__data-clouds').innerHTML = `Облочность: ` + dataWeather.clouds.all + ` %`;
         
         let background = document.querySelector('.weather');
-        let idWeather = dataWeather.weather[0].id;
-        let clouds = dataWeather.clouds.all;
-        if(temp1 >= 10 & idWeather === 800 & clouds < 35){
-            background.style.background = 'url(./img/clear.jpg)';
+        let mainWeather = dataWeather.weather[0].main;
+        if(mainWeather === 'Clouds'){
+            background.style.background = ' linear-gradient(rgba(255, 255, 255, 0.7), rgba(0, 0, 0, 0.5)), url(./img/clear__main.jpg)';
             background.style.backgroundPosition = 'center';
             background.style.backgroundSize = 'cover';
-        }else if (temp1 >= 8 & idWeather === 801 & clouds > 70){
-            background.style.background = 'url(./img/cloudy-weather.jpg)';
+        }else if (mainWeather === 'Rain') {
+            background.style.background = 'linear-gradient(rgba(255, 255, 255, 0.7), rgba(0, 0, 0, 0.5)), url(./img/rain.jpeg)';
             background.style.backgroundPosition = 'center';
             background.style.backgroundSize = 'cover';
-        }else if(temp1 <= 1 & clouds > 70){
-            background.style.background = 'url(./img/snow.jpg)';
-            background.style.backgroundPosition = 'center';
-            background.style.backgroundSize = 'cover';
-        }else if (temp1 >= 10 & idWeather === 804 & clouds > 70) {
-            background.style.background = 'url(./img/rain.jpeg)';
-            background.style.backgroundPosition = 'center';
-            background.style.backgroundSize = 'cover';
-        }else if (temp1 >= 5 & idWeather === 500 & clouds > 70) {
-            background.style.background = 'url(./img/rain.jpeg)';
+        }else if (mainWeather === 'Clear') {
+            background.style.background = ' linear-gradient(rgba(255, 255, 255, 0.7), rgba(0, 0, 0, 0.5)), url(./img/clear.jpg)';
             background.style.backgroundPosition = 'center';
             background.style.backgroundSize = 'cover';
         }
@@ -80,6 +76,7 @@ time ();
         time.innerHTML = message += `  ` + hour + ':' + minute;
     }
 
+    //rain  Clear Clouds
 
 // {
 //     "coord": {

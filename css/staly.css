@@ -68,7 +68,7 @@
     margin: 0 auto;
     border-radius: 35px;
     border: 1px solid black;
-    background-image: url(./img/prog.jpg);
+    background-image: url(/img/prog.jpg);
     background-position: center;
     background-size: cover;
 }

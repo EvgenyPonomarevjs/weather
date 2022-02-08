@@ -8,7 +8,7 @@ let icon = document.querySelector('#weather__data-icon');
 searchBtn.addEventListener('click', () => {
     let searchCity = city.value
     //console.log(searchCity);
-    let url = `http://api.openweathermap.org/data/2.5/weather?q=${searchCity}&units=metric&appid=${keyApi}`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&units=metric&appid=${keyApi}`;
 
     fetch(url).then(res => {
         return res.json()
